@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>proccesone — Terminal Giriş</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ffcc;
+      font-family: "Courier New", Courier, monospace;
+      padding: 40px;
+    }
+    .warning {
+      color: red;
+    }
+    .terminal {
+      background-color: #111;
+      padding: 20px;
+      border: 1px solid #00ffcc;
+      white-space: pre-wrap;
+      margin-top: 20px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .input-section {
+      margin-top: 20px;
+    }
+    input {
+      background-color: #000;
+      color: #00ffcc;
+      border: 1px solid #00ffcc;
+      padding: 5px;
+      font-family: "Courier New", monospace;
+    }
+    button {
+      background-color: #111;
+      color: #00ffcc;
+      border: 1px solid #00ffcc;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-family: "Courier New", monospace;
+    }
+    #error-message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>proccesone [Terminal Arayüzü]</h1>
+
+  <p class="warning">UYARI: Kayıt defteri bağlantısı çözüldü.</p>
+
+  <div class="terminal">
+    [SYSTEM INITIATED]<br>
+    Konfigürasyon yükleniyor...<br>
+    <span style="color:red;">[HATA]</span> Kurulum tamamlanamadı.<br>
+    <span style="color:orange;">[UYARI]</span> Manuel kurtarma moduna geçiliyor...<br><br>
+    
+    Erişim için aşağıdaki bağlantıya ilerleyin:<br>
+    👉 <a href="recovery/">recovery terminaline eriş</a><br><br>
+
+    <span style="color:lime;">[MANUEL GİRİŞ GEREKLİ]</span><br>
+    Lütfen kimlik doğrulama anahtarını girin:
+    <div class="input-section">
+      <input type="text" id="password" placeholder="şifre">
+      <button onclick="checkPassword()">Gönder</button>
+      <div id="error-message"></div>
+    </div>
+  </div>
+
+  <p style="margin-top: 40px;">&copy; LaizyS Channel — 2025</p>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password").value.trim();
+      const correctPassword = "f1r37_aCceSS"; // şifren burada
+      if (input === correctPassword) {
+        window.open("https://www.youtube.com/watch?v=YOUR_VIDEO_ID", "_blank");
+        window.close();
+      } else {
+        document.getElementById("error-message").innerText = "[HATA] Geçersiz anahtar.";
+      }
+    }
+  </script>
+
+</body>
+</html>
